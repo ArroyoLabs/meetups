@@ -1,5 +1,7 @@
 <head>
-  <title>MeteorJS & D3 Demo</title>
+    <title>MeteorJS & D3 Demo</title>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
 </head>
 
 <body>
@@ -40,8 +42,19 @@
                     </ul>
                 </li>
 
-                <li><a href="/geomap">GeoMap</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maps <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/maps1">Map 1</a></li>
+                        <li><a href="/maps2">Map 2</a></li>
+                        <li><a href="/maps3">Map 3</a></li>
+                        <li><a href="/maps4">Map 4</a></li>
+                        <li><a href="/maps5">Map 5</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="/reactivebars">Reactive Bar Chart</a></li>
+
             </ul>
         </div>
 
@@ -58,9 +71,31 @@
 <div class="row-fluid">
     <div class="span12">
         <ul>
-            <li><a href="/bars">Example Bar Charts</a></li>
-            <li><a href="/geomap">Geo Map</a></li>
-            <li><a href="/reactivebars">Reactive Bar Chart</a></li>
+            <li>
+                <h2>Bar Charts</h2>
+                <ul>
+                    <li><a href="/bars1">Example 1</a></li>
+                    <li><a href="/bars2">Example 2</a></li>
+                    <li><a href="/bars3">Example 3</a></li>
+                    <li><a href="/bars4">Example 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2>Maps</h2>
+                <ul>
+                    <li><a href="/maps1">Example 1</a></li>
+                    <li><a href="/maps2">Example 2</a></li>
+                    <li><a href="/maps3">Example 3</a></li>
+                    <li><a href="/maps4">Example 4</a></li>
+                    <li><a href="/maps5">Example 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2>Reactive</h2>
+                <ul>
+                    <li><a href="/reactivebars">Reactive Bar Chart</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>

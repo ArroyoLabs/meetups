@@ -80,56 +80,241 @@
     }
 }
 
-/* barchart 2 */
-.chart {
-    margin: 20px 10px 10px 10px;
-    padding: 10px 0 30px 20px;
+#bars1, #bars2, #bars3, #bars4 {
+    .chart {
+        margin: 20px 10px 10px 10px;
+        padding: 10px 0 30px 20px;
+    }
+
+    .chart rect {
+        fill: #FF0000;
+    }
+
+    .chart text {
+        fill: white;
+        font: 10px sans-serif;
+        text-anchor: middle;
+    }
+
+    /* barchart */
+    .bar rect {
+        fill: steelblue;
+    }
+
+    .bar text.value {
+        fill: white;
+    }
+
+    .axis {
+        shape-rendering: crispEdges;
+    }
+
+    .axis path {
+        fill: none;
+    }
+
+    .x.axis line {
+        stroke: #fff;
+        stroke-opacity: .8;
+    }
+
+    .y.axis path {
+        stroke: black;
+    }
+
+    .chart text.label {
+        fill: #000;
+        font: 14px sans-serif;
+        text-anchor: middle;
+    }
+
+    /* barchart 4 */
+    .chart rect.positive {
+        color:#00FF00;
+        fill:#00FF00;
+    }
 }
 
-.chart rect {
-    fill: #FF0000;
+#map1, #map2, #map3 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    .background {
+        fill: none;
+        pointer-events: all;
+    }
+
+    #countries, #states {
+        fill: #cde;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+
+    #countries .active, #states .active {
+        fill: #89a;
+    }
+
+    #cities {
+        stroke-width: 0;
+    }
+
+    .city {
+        fill: #345;
+        stroke: #fff;
+    }
+
+    pre.prettyprint {
+        border: 1px solid #ccc;
+        margin-bottom: 0;
+        padding: 9.5px;
+    }
+
+    /* New Stuff */
+    .tooltip{
+        color:#FFF;
+        background-color:#000;
+        z-index:9000;
+    }
 }
 
-.chart text {
-    fill: white;
-    font: 10px sans-serif;
-    text-anchor: middle;
+#map4 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    .background {
+        fill: none;
+        pointer-events: all;
+    }
+
+    #countries, #states {
+        fill: #cde;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+
+    #countries .active, #states .active {
+        fill: #89a;
+    }
+
+    #cities {
+        stroke-width: 0;
+    }
+
+    .city {
+        fill: #345;
+        stroke: #fff;
+    }
+
+    .mag-0 {
+        fill: #18BC2E;
+    }
+
+    .mag-1 {
+        fill: #19FC11;
+    }
+
+    .mag-2 {
+        fill: #DAFC30;
+    }
+
+    .mag-3 {
+        fill: #EFFD2E;
+    }
+
+    .mag-4 {
+        fill: #FFC112;
+    }
+
+    pre.prettyprint {
+        border: 1px solid #ccc;
+        margin-bottom: 0;
+        padding: 9.5px;
+    }
+
+    .tooltip{
+        color:#FFF;
+        background-color:#000;
+        z-index:9000;
+    }
 }
 
-/* barchart */
-.bar rect {
-    fill: steelblue;
+#map5 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    .background {
+        fill: none;
+        pointer-events: all;
+    }
+
+    #countries, #states {
+        fill: #595959;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+
+    #countries .active, #states .active {
+        fill: #A9A9A9;
+    }
+
+    #cities {
+        stroke-width: 0;
+    }
+
+    .city {
+        fill: #345;
+        stroke: #fff;
+    }
+
+    .mag-0 {
+        fill: #066A06;
+    }
+
+    .mag-1 {
+        fill: #83C430;
+    }
+
+    .mag-2 {
+        fill: #F4F556;
+    }
+
+    .mag-3 {
+        fill: #F5AE34;
+        stroke: #fff;
+    }
+
+    .mag-4 {
+        fill: #F66713;
+        stroke: #fff;
+    }
+
+    .mag-5 {
+        fill: #F44A1F;
+        stroke: #fff;
+    }
+
+    .mag-6 {
+        fill: #F32D2B;
+        stroke: #fff;
+    }
+
+    pre.prettyprint {
+        border: 1px solid #ccc;
+        margin-bottom: 0;
+        padding: 9.5px;
+    }
+
+    .tooltip, .tooltip2 {
+        color:#FFF;
+        background-color:#000;
+        z-index:9000;
+        display: none;
+        font-size: 16px;
+        padding: 2px 7px;
+    }
 }
 
-.bar text.value {
-    fill: white;
-}
 
-.axis {
-    shape-rendering: crispEdges;
-}
-
-.axis path {
-    fill: none;
-}
-
-.x.axis line {
-    stroke: #fff;
-    stroke-opacity: .8;
-}
-
-.y.axis path {
-    stroke: black;
-}
-
-.chart text.label {
-    fill: #000;
-    font: 14px sans-serif;
-    text-anchor: middle;
-}
-
-/* barchart 4 */
-.chart rect.positive {
-    color:#00FF00;
-    fill:#00FF00;
-}
