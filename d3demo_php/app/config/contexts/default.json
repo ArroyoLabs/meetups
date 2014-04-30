@@ -1,0 +1,80 @@
+{
+   "site":{
+      "name":"Erdiko",
+      "full_name":"Erdiko Framework",
+      "tagline":"The Mashup Framework",
+      "meta":[
+         {
+            "name":"description",
+            "content":"Erdiko the PHP mashup framework"
+         }
+      ]
+   },
+   "theme":{
+      "name":"hello",
+      "namespace":"/themes/hello",
+      "path":"/public/themes/hello",
+      "config":"/public/themes/hello/theme.json"
+   },
+   "layout":{
+      "layout":{
+         "columns":1
+      },
+      "title":"Erdiko",
+      "site_name":"Erdiko",
+      "header":{
+         "site_name":"Erdiko",
+         "tagline":"The Mashup Framework",
+         "content":""
+      }
+   },
+   "menu":{
+      "main":[
+         {
+            "href":"/barchart",
+            "title":"Bar Charts"
+         },
+         {
+            "href":"/geomap",
+            "title":"Maps"
+         },
+         {
+            "href":"/threecolumn",
+            "title":"3 Column Layout"
+         }
+      ],
+      "footer":[
+         {
+            "href":"/",
+            "title":"home"
+         },
+         {
+            "href":"/config",
+            "title":"view config"
+         },
+         {
+            "href":"/exception",
+            "title":"exception example"
+         },
+         {
+            "href":"/about",
+            "title":"about"
+         }
+      ]
+   },
+   "logs":{
+      "name":"default",
+      "path":"/var/logs",
+      "files":[{
+            "default":"default.log",
+            "exception":"exception.log"
+		}
+      ]
+   },
+   "cache":{
+      "default":{
+			"path":"/var/cache",
+			"type":"FileCache"
+	  }
+   }
+}
