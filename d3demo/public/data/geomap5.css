@@ -1,0 +1,64 @@
+#map {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.background {
+  fill: none;
+  pointer-events: all;
+}
+#countries, #states {
+  fill: #595959;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+#countries .active, #states .active {
+  fill: #A9A9A9;
+}
+#cities {
+  stroke-width: 0;
+}
+.city {
+  fill: #345;
+  stroke: #fff;
+}
+.mag-0 {
+  fill: #066A06;
+}
+.mag-1 {
+  fill: #83C430;
+}
+.mag-2 {
+  fill: #F4F556;
+}
+.mag-3 {
+  fill: #F5AE34;
+  stroke: #fff;
+}
+.mag-4 {
+  fill: #F66713;
+  stroke: #fff;
+}
+.mag-5 {
+  fill: #F44A1F;
+  stroke: #fff;
+}
+.mag-6 {
+  fill: #F32D2B;
+  stroke: #fff;
+}
+
+pre.prettyprint {
+  border: 1px solid #ccc;
+  margin-bottom: 0;
+  padding: 9.5px;
+}
+/* New Stuff */
+.tooltip, .tooltip2 {
+  color:#FFF;
+  background-color:#000;
+  z-index:9000;
+  display: none;
+  font-size: 16px;
+  padding: 2px 7px;
+}

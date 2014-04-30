@@ -15,10 +15,27 @@ if (Meteor.isClient) {
             path: "/",
             template: "index"
         });
-        this.route("bars", {
-            path: "/bars",
-            template: "bars"
+
+        this.route("bars1", {
+            path: "/bars1",
+            template: "bars1"
         });
+
+        this.route("bars2", {
+            path: "/bars2",
+            template: "bars2"
+        });
+
+        this.route("bars3", {
+            path: "/bars3",
+            template: "bars3"
+        });
+
+        this.route("bars4", {
+            path: "/bars4",
+            template: "bars4"
+        });
+
         this.route("geomap", {
             path: "/geomap",
             template: "geomap"
@@ -75,6 +92,242 @@ if (Meteor.isClient) {
         the backend since it only manipulates the data from the backend.
 
     */
+    Template.bars1.created = function () {
+
+        _.defer(function () {
+
+            var m = [30, 10, 10, 30],
+                w = 960 - m[1] - m[3],
+                h = 930 - m[0] - m[2];
+
+            var format = d3.format(",.0f");
+
+            var x = d3.scale.linear().range([0, w]),
+                y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
+
+            var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
+                yAxis = d3.svg.axis().scale(y).orient("left").tickSize(0);
+
+            var svg = d3.select("#chart1").append("svg")
+                    .attr("width", w + m[1] + m[3])
+                    .attr("height", h + m[0] + m[2])
+                .append("g")
+                    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+            d3.csv("data/barchart-sample-data.csv", function(data) {
+
+                // Parse numbers, and sort by value.
+                data.forEach(function(d) { d.value = +d.value; });
+                data.sort(function(a, b) { return b.value - a.value; });
+
+                // Set the scale domain.
+                x.domain([0, d3.max(data, function(d) { return d.value; })]);
+                y.domain(data.map(function(d) { return d.name; }));
+
+                var bar = svg.selectAll("g.bar")
+                    .data(data)
+                .enter().append("g")
+                    .attr("class", "bar")
+                    .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
+
+                bar.append("rect")
+                    .attr("width", function(d) { return x(d.value); })
+                    .attr("height", y.rangeBand());
+
+                bar.append("text")
+                    .attr("class", "value")
+                    .attr("x", function(d) { return x(d.value); })
+                    .attr("y", y.rangeBand() / 2)
+                    .attr("dx", -3)
+                    .attr("dy", ".35em")
+                    .attr("text-anchor", "end")
+                    .text(function(d) { return format(d.value); });
+
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .call(xAxis);
+
+                svg.append("g")
+                    .attr("class", "y axis")
+                    .call(yAxis);
+            });
+        });
+
+    }
+
+    Template.bars2.created = function() {
+
+        _.defer(function () {
+
+            var width = 960,
+                height = 500;
+
+            var y = d3.scale.linear()
+                .range([height, 0]);
+
+            var chart = d3.select("#chart2")
+                .attr("width", width)
+                .attr("height", height);
+
+            d3.tsv("data/barchart2-data.tsv", type, function(error, data) {
+                y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+                var barWidth = width / data.length;
+
+                var bar = chart.selectAll("g")
+                    .data(data)
+                    .enter().append("g")
+                        .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+                bar.append("rect")
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("height", function(d) { return height - y(d.value); })
+                    .attr("width", barWidth - 1);
+
+                bar.append("text")
+                    .attr("x", barWidth / 2)
+                    .attr("y", function(d) { return y(d.value) + 3; })
+                    .attr("dy", ".75em")
+                    .text(function(d) { return d.value; });
+            });
+
+            function type(d) {
+                d.value = +d.value; // coerce to number
+                return d;
+            }
+
+        });
+    }
+
+    Template.bars3.created = function() {
+        _.defer(function () {
+
+            var width = 960,
+                height = 500;
+
+            var y = d3.scale.linear()
+                .range([height, 0]);
+
+            var chart = d3.select("#chart3")
+                .attr("width", width)
+                .attr("height", height);
+
+            d3.tsv("data/barchart2-data.tsv", type, function(error, data) {
+                y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+                var barWidth = width / data.length;
+
+                var bar = chart.selectAll("g")
+                    .data(data)
+                    .enter().append("g")
+                        .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+                bar.append("rect")
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("height", function(d) { return height - y(d.value); })
+                    .attr("width", barWidth - 1);
+
+                bar.append("text")
+                    .attr("x", barWidth / 2)
+                    .attr("y", function(d) { return y(d.value) + 3; })
+                    .attr("dy", ".75em")
+                    .text(function(d) { return d.value; });
+            });
+
+            // x-axis
+            chart.append("text")
+                .attr("class", "x label")
+                .attr("text-anchor", "end")
+                .attr("x", width - 820)
+                .attr("y", height + 20)
+                .text("This is the X Axis");
+
+            // y-axis label like this
+            chart.append("text")
+                .attr("class", "y label")
+                .attr("text-anchor", "end")
+                .attr("x", -60)
+                .attr("y", -20)
+                .attr("dy", ".75em")
+                .attr("transform", "rotate(-90)")
+                .text("This is the Y Axis");
+
+            function type(d) {
+                d.value = +d.value; // coerce to number
+                return d;
+            }
+
+        });
+    }
+
+    Template.bars4.created = function() {
+        _.defer(function () {
+
+            var width = 960,
+                height = 500;
+
+            var y = d3.scale.linear()
+                .range([height, 0]);
+
+            var chart = d3.select("#chart4")
+                .attr("width", width)
+                .attr("height", height);
+
+            d3.csv("data/bitcoin-data.csv", type, function(error, data) {
+                y.domain([0, d3.max(data, function(d) { return d.close; })]);
+
+                var barWidth = width / data.length;
+
+                var bar = chart.selectAll("g")
+                    .data(data)
+                    .enter().append("g")
+                        .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+                bar.append("rect")
+                    .attr("y", function(d) { return y(d.close); })
+                    .attr("height", function(d) { return height - y(d.close); })
+                    .attr("width", barWidth - 1)
+                    .attr("class",function(d) {
+                        if(d.close > d.open){
+                            return "positive";
+                        } else {
+                            return "negative";
+                        }
+                    });     
+
+                bar.append("text")
+                    .attr("x", barWidth / 2)
+                    .attr("y", function(d) { return y(d.close) + 3; })
+                    .attr("dy", ".75em")
+                    .text(function(d) { return d.close; });
+            });
+
+            // x-axis
+            chart.append("text")
+                .attr("class", "x label")
+                .attr("text-anchor", "end")
+                .attr("x", width - 900)
+                .attr("y", height + 20)
+                .text("Time");
+
+            // y-axis label like this
+            chart.append("text")
+                .attr("class", "y label")
+                .attr("text-anchor", "end")
+                .attr("x", -90)
+                .attr("y", -20)
+                .attr("dy", ".75em")
+                .attr("transform", "rotate(-90)")
+                .text("Bitcoin Closing Price in $USD");
+
+            function type(d) {
+                d.close = +d.close; // coerce to number
+                return d;
+            }
+
+        });
+    }
+
     Template.reactivebars.created = function () {
 
         // We need to wait until the DOM is loaded, so we use defer
