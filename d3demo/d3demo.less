@@ -78,16 +78,27 @@
     .bar {
       fill: steelblue;
     }
+
+    .text {
+        fill: black;
+        font: 12px sans-serif !important;
+        text-anchor: middle;
+    }
+
+    .label {
+        font-size:10px;
+    }
+
 }
 
-#chart1 {
-    .chart rect {
+#chart1, #chart2, #chart3, #chart4 {
+    rect {
         fill: #FF0000;
     }
 
-    .chart text {
+    .text {
         fill: white;
-        font: 10px sans-serif;
+        font: 10px sans-serif !important;
         text-anchor: middle;
     }
 
@@ -130,7 +141,7 @@
     }
 }
 
-/* barchart 2 */
+/* 
 .chart {
 	margin: 20px 10px 10px 10px;
 	padding: 10px 0 30px 20px;
@@ -146,7 +157,6 @@
   text-anchor: middle;
 }
 
-/* barchart */
 .bar rect {
   fill: steelblue;
 }
@@ -178,11 +188,11 @@
 	text-anchor: middle;
 }
 
-/* barchart 4 */
 .chart rect.positive {
 	color:#00FF00;
 	fill:#00FF00;
 }
+*/
 
 #map1, #map2, #map3 {
     background-color: #fff;
