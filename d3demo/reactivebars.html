@@ -1,0 +1,50 @@
+<template name="reactivebars">
+<div class="row-fluid">
+    <div class="span12">
+        <h1>Reactive Bar Chart Example</h1>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div id="barchart-container">
+            {{> reactivebarchart}}
+            {{> foodlist}}
+        </div>
+    </div>
+</div>
+</template>
+
+<template name="foodlist">
+<div class="foodlist">
+    <div class="foods">
+        {{#each foods}}
+            {{> food}}
+        {{/each}}
+    </div>
+</div>
+
+{{#if selected_food}}
+<div class="details">
+    <div class="name">{{selected_food}}</div>
+    <input type="button" class="inc" value="Vote" />
+</div>
+{{/if}}
+
+{{#unless selected_food}}
+    <div class="none">Click a food to select</div>
+{{/unless}}
+</template>
+
+<template name="food">
+<div class="food {{selected}}">
+    <span class="name">{{name}}</span>
+    <span class="votes">{{votes}}</span>
+</div>
+</template>
+
+<template name="reactivebarchart">
+<div class="chart" height="150px" width="600px">
+    <svg id="chart"></svg>
+</div>
+</template>
+

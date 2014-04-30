@@ -24,8 +24,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">MeteorJS & D3 Demo</a>
+            <a class="navbar-brand" href="/">MeteorJS & D3 Demo</a>
         </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/bars">Bar Charts</a></li>
+                <li><a href="/geomap">GeoMap</a></li>
+                <li><a href="/reactivebars">Reactive Bar Chart</a></li>
+            </ul>
+        </div>
+
     </div>
 </div>
 </template>
@@ -39,16 +48,10 @@
 <div class="row-fluid">
     <div class="span12">
         <ul>
-            <li><a href="/bars">Reactive Bar Chart</a></li>
+            <li><a href="/bars">Example Bar Charts</a></li>
+            <li><a href="/geomap">Geo Map</a></li>
+            <li><a href="/reactivebars">Reactive Bar Chart</a></li>
         </ul>
     </div>
-</div>
-</template>
-
-<template name="bars">
-<h1>Bar Chart Example</h1>
-<div id="barchart-container">
-    {{> barchart}}
-    {{> foodlist}}
 </div>
 </template>

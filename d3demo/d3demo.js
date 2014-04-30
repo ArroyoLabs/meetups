@@ -19,6 +19,14 @@ if (Meteor.isClient) {
             path: "/bars",
             template: "bars"
         });
+        this.route("geomap", {
+            path: "/geomap",
+            template: "geomap"
+        });
+        this.route("reactivebars", {
+            path: "/reactivebars",
+            template: "reactivebars"
+        });
     });
 
     // Get a list of the foods and sort by name
@@ -67,7 +75,7 @@ if (Meteor.isClient) {
         the backend since it only manipulates the data from the backend.
 
     */
-    Template.barchart.created = function () {
+    Template.reactivebars.created = function () {
 
         // We need to wait until the DOM is loaded, so we use defer
         _.defer(function () {
