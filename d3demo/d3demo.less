@@ -1,3 +1,8 @@
+/* Variables */
+
+@hoverColor:    #AAA;
+
+
 /* CSS declarations go here */
 
 #main {
@@ -88,15 +93,18 @@
     .label {
         font-size:10px;
     }
-
 }
 
 #chart1, #chart2, #chart3, #chart4 {
     margin: 20px 10px 10px 10px;
     padding: 10px 0 30px 20px;
-    
+
     rect {
         fill: #FF0000;
+    }
+
+    rect:hover {
+        fill: @hoverColor;
     }
 
     .text {
@@ -141,6 +149,10 @@
     rect.positive {
         color:#00FF00;
         fill:#00FF00;
+    }
+
+    rect.positive:hover {
+        fill: @hoverColor;
     }
 }
 
@@ -326,4 +338,17 @@
     }
 }
 
+pre.prettyprint {
+  border: 1px solid #ccc;
+  margin-bottom: 0;
+  padding: 9.5px;
+}
 
+.tooltip2 {
+        color:#FFF;
+        background-color:#000;
+        z-index:9000;
+        display: none;
+        font-size: 16px;
+        padding: 2px 7px;
+    }

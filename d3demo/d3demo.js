@@ -297,6 +297,13 @@ if (Meteor.isClient) {
                 .attr("width", width)
                 .attr("height", height);
 
+            // Tooltip example
+            var tooltip = d3.select("body")
+              .append("div")
+              .attr("class", "tooltip2")
+              .style("position", "absolute")
+              .text("a tooltip");
+
             d3.csv("data/bitcoin-data.csv", type, function(error, data) {
                 y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
@@ -317,13 +324,13 @@ if (Meteor.isClient) {
                         } else {
                             return "negative";
                         }
-                    });     
-
-                bar.append("text")
-                    .attr("x", barWidth / 2)
-                    .attr("y", function(d) { return y(d.close) + 3; })
-                    .attr("dy", ".75em")
-                    .text(function(d) { return d.close; });
+                    })
+                    .on("mouseover", function(d){
+                        tooltip.text("Closing Price: "+d.close);
+                        return tooltip.style("display", "block");
+                    })
+                    .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+                    .on("mouseout", function(){return tooltip.style("display", "none");});
             });
 
             // x-axis
@@ -1072,6 +1079,13 @@ if (Meteor.isClient) {
                 .on("click", country_clicked);
 
             var g = svg.append("g");
+
+            // Tooltip example
+            var tooltip = d3.select("body")
+              .append("div")
+              .attr("class", "tooltip2")
+              .style("position", "absolute")
+              .text("a tooltip");
 
             d3.json("data/geo/countries.topo.json", function(error, us) {
                 g.append("g")
