@@ -1,0 +1,10 @@
+[{
+	"geometry":{"coordinates":[-117.29936777768731,34.12100472798384],"type":"Point"},
+	"properties":{"name":"Los Angeles","state":"California"},
+	"type":"Feature"
+},
+{
+	"geometry":{"coordinates":[-119,38],"type":"Point"},
+	"properties":{"name":"Los Gatos","state":"California"},
+	"type":"Feature"
+}]
