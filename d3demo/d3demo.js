@@ -523,6 +523,7 @@ if (Meteor.isClient) {
 
             var g = svg.append("g");
 
+            // Create div that will hold tooltip
             var tooltip = d3.select("body")
                 .append("div")
                 .style("color", "#FFF")
@@ -613,6 +614,7 @@ if (Meteor.isClient) {
 
                     d3.json("data/geo/cities_" + country_code + ".topo.json", function(error, us) {
 
+                        // Attach mouseover, mouseout and mousemove events to the data point
                         g.append("g")
                             .attr("id", "cities")
                             .selectAll("path")
@@ -631,7 +633,7 @@ if (Meteor.isClient) {
                             .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
                         zoom(xyz);
-                    });      
+                    });
                 } else {
                     state = null;
                     country_clicked(country);
