@@ -1300,7 +1300,7 @@ if (Meteor.isClient) {
                 label_selector
                     .transition()                                                                               // Add transition animation to make the labels move with the bar elements
                     .duration(100)
-                        .attr("x", function(d) { return window.chart.x(d.name);})
+                        .attr("x", function(d) { return window.chart.x(d.votes) + 5;})
                         .attr("y", function(d) { return window.chart.y(d.votes) - 5; })                         // 'Pull' the label up 5px from the top of the bar
                         .text(function(d) {return d.name + ': ' + d.votes;})                                    // Set the text label to the food name and vote count
                         .attr("height", function(d) { return window.chart.height - window.chart.y(d.votes); }) 
