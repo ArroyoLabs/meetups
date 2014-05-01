@@ -326,7 +326,8 @@ if (Meteor.isClient) {
                         }
                     })
                     .on("mouseover", function(d){
-                        tooltip.text("Closing Price: "+d.close);
+                        n = d.close;
+                        tooltip.text("Closing Price: $"+n.toFixed(2));
                         return tooltip.style("display", "block");
                     })
                     .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
