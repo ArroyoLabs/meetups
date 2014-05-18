@@ -1276,8 +1276,8 @@ if (Meteor.isClient) {
                 });
             }
 
-            plotline("data/linedata.tsv", "line");
-            plotline("data/linedata2.tsv", "line2");
+            plotline("data/linedata3.tsv", "line");
+            plotline("data/linedata4.tsv", "line2");
 
             // Generate the legend
             svg.append("g")
