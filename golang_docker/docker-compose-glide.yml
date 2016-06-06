@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  golang:
+    container_name: gotainer_glide
+    build:
+      context: .
+      dockerfile: Dockerfile-glide
+    image: golang_glide_image
+    volumes:
+      - ./src:/go/src
+    ports:
+      - "3339:3333"
