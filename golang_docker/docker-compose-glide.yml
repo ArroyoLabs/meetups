@@ -6,8 +6,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-glide
+      args:
+        folder: project
+    env_file: environment.env
     image: golang_glide_image
     volumes:
-      - ./src:/go/src
+      - ./:/go
     ports:
-      - "3339:3333"
+      - "8888:8888"
+    # entrypoint: /go/bin/project

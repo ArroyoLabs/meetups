@@ -8,4 +8,4 @@ ADD ./src/project /go/src/project
 RUN go install project
 ENTRYPOINT /go/bin/project
  
-EXPOSE 3333 
+EXPOSE 8888 
