@@ -7,7 +7,7 @@ import (
 )
  
 func indexHandler( w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hello world, I'm running on %s with an %s CPU \n Golang w/ glide", runtime.GOOS, runtime.GOARCH)
+	fmt.Fprintf(w, "hello world, I'm running on %s with an %s CPU \nGolang Docker container", runtime.GOOS, runtime.GOARCH)
 }
 
 func main() {

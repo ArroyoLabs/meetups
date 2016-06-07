@@ -1,6 +1,6 @@
 FROM golang
  
-# Some convenient tools
+# Some convenient updates and tools
 RUN apt-get update && apt-get -y install vim
 
 # Go environment

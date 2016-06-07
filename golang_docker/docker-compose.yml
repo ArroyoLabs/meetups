@@ -6,6 +6,6 @@ services:
     build: .
     image: golang_image
     volumes:
-      - ./src:/go/src
+      - ./:/go
     ports:
       - "8888:8888"

@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  golang:
+    container_name: gotainer_glide
+    build:
+      context: .
+      args:
+        project_name: project
+    entrypoint: /go/bin/project
+    # env_file: environment.env
+    image: golang_glide_image
+    volumes:
+      - ./:/go
+    ports:
+      - "8877:8888"
