@@ -25,10 +25,9 @@ COPY ./bin /go/bin
 RUN cd /src && chmod 770 *.sh && ./setup.sh
 
 # Compile your go app
-RUN echo $GOPATH
 ARG project_name
-ADD ./src/$project_name /go/src/$project_name
-RUN /usr/local/go/bin/go install $project_name
+# ADD ./src/$project_name /go/src/$project_name
+# RUN /usr/local/go/bin/go install $project_name
 
 ##################### INSTALLATION END #####################
 
