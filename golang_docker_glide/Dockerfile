@@ -8,8 +8,8 @@ ARG project_name
 ADD ./src/$project_name /go/src/$project_name
 
 # Install Glide
-ADD ./scripts /go/scripts
-# RUN cd /go/scripts && chmod 770 glide.sh && ./glide.sh
+ADD ./docker/scripts /src
+RUN cd /src && chmod 770 glide.sh && ./glide.sh
 
 RUN go install $project_name
 ENTRYPOINT /go/bin/project
