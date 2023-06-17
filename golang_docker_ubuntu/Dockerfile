@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:trusty-20190515
 
 # File Author / Maintainer
 MAINTAINER John Arroyo, john@arroyolabs.com
